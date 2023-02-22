@@ -10,15 +10,19 @@ import pageObjects.HomePage;
 import pageObjects.LoginPage;
 import utils.BaseClass;
 
-public class LoginPageStepDefs {
+public class LoginPageStepDefs extends BaseClass{
 	
+	public LoginPageStepDefs() {
+		super();
+	}
+
 	LoginPage objLogin = new LoginPage();
     HomePage objHomePage = new HomePage();
     ForgetPasswordPage objForgotPasswordPage = new ForgetPasswordPage();
 	
 	@Given("User is on HRMLogin page {string}")
 	public void user_is_on_hrm_login_page(String url) {
-		BaseClass.openPage(url);
+		openPage(url);
 	}
 
 	@When("User enters username as {string} and password as {string}")

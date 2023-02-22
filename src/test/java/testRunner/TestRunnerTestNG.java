@@ -8,7 +8,6 @@ import io.cucumber.testng.CucumberOptions;
 					features = "src/test/resources/features/LoginPage.feature", 
 					glue = "stepDefs", 
 					plugin = {"pretty", 
-							  "html:test-output", 
 							  "json:target/cucumber.json", 
 							  "html:target/cucumber-html-report" }
 				)
