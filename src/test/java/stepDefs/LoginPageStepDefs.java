@@ -27,22 +27,16 @@ public class LoginPageStepDefs extends BaseClass{
 
 	@When("User enters username as {string} and password as {string}")
 	public void user_enters_username_as_and_password_as(String userName, String passWord) {
-		// login to application
         objLogin.login(userName, passWord);
-  
-        // go the next page
 	}
 
 	@Then("User should be able to login successfully and new page open")
 	public void user_should_be_able_to_login_successfully_and_new_page_open() {
-		 // Verify home page
         Assert.assertTrue(objHomePage.getHomePageText().contains("Dashboard"));
-  
 	}
 
 	@Then("User should be able to see error message {string}")
 	public void user_should_be_able_to_see_error_message(String expectedErrorMessage) {
-		  // Verify home page
         Assert.assertEquals(objLogin.getErrorMessage(),expectedErrorMessage);
   
 	}
